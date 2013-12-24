@@ -11,6 +11,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import  <QuartzCore/QuartzCore.h>
 
 //2 - scrollviewdelegate protokolunu ekleme
 @interface ViewController : UIViewController<UIScrollViewDelegate>

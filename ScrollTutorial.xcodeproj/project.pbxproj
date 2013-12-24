@@ -22,6 +22,7 @@
 		A3AF41BD1869F7CA00CE1351 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF419C1869F7CA00CE1351 /* UIKit.framework */; };
 		A3AF41C51869F7CA00CE1351 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3AF41C31869F7CA00CE1351 /* InfoPlist.strings */; };
 		A3AF41C71869F7CA00CE1351 /* ScrollTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AF41C61869F7CA00CE1351 /* ScrollTutorialTests.m */; };
+		A3AF41D1186A170700CE1351 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF41D0186A170700CE1351 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A3AF41C21869F7CA00CE1351 /* ScrollTutorialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScrollTutorialTests-Info.plist"; sourceTree = "<group>"; };
 		A3AF41C41869F7CA00CE1351 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A3AF41C61869F7CA00CE1351 /* ScrollTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollTutorialTests.m; sourceTree = "<group>"; };
+		A3AF41D0186A170700CE1351 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3AF41D1186A170700CE1351 /* QuartzCore.framework in Frameworks */,
 				A3AF419B1869F7CA00CE1351 /* CoreGraphics.framework in Frameworks */,
 				A3AF419D1869F7CA00CE1351 /* UIKit.framework in Frameworks */,
 				A3AF41991869F7CA00CE1351 /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		A3AF41971869F7CA00CE1351 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3AF41D0186A170700CE1351 /* QuartzCore.framework */,
 				A3AF41981869F7CA00CE1351 /* Foundation.framework */,
 				A3AF419A1869F7CA00CE1351 /* CoreGraphics.framework */,
 				A3AF419C1869F7CA00CE1351 /* UIKit.framework */,

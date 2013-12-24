@@ -25,8 +25,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // infoview gizleme
-    self.infoView.alpha=0;
+    
+    self.infoView.alpha=1;
     self.scroll.pagingEnabled=NO; // scrollview Paging
     [self setUpScrollView];
     
@@ -85,7 +85,59 @@
 
 
 #pragma mark ScrollView Delegates
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    //NSLog(@"velocity: %f",velocity.y);
+}
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+   // [self show];
+    // calculate in background thread
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+          [self calculateVelocity];
+    });
+}
+
+
+#pragma mark velocity Calculator
+-(void)calculateVelocity
+{
+  CFTimeInterval timeStart=CACurrentMediaTime();
+    static int oldY=0;
+    int newY=self.scroll.contentOffset.y;
+    int diff=fabsf(newY -oldY);
+    if(diff == 1)
+    {
+        diff=0;
+    }
+    oldY=self.scroll.contentOffset.y;
+    
+    CFTimeInterval timeElapsed=CACurrentMediaTime()-timeStart;
+    int speed=diff/timeElapsed ;
+    speed=speed/1000;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //main thread
+              self.speedLabel.text=[NSString stringWithFormat:@"%d",speed];
+             NSLog(@"velocity: %d",speed);
+            NSLog(@"time elapsed: %f",timeElapsed);
+        });
+        
+    
+    
+}
+
+
+#pragma mark show/Hide animations
+
+-(void)show
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.infoView.alpha=1;
+    } completion:^(BOOL finished) {
+        self.infoView.alpha=0;
+    }];
+}
 
 - (void)didReceiveMemoryWarning
 {
