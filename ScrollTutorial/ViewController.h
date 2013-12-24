@@ -7,11 +7,23 @@
 //
 
 /*
-    Scroll Tutorial asdasdasdasd
+    UIScrollView Tutorial
  */
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+//2 - scrollviewdelegate protokolunu ekleme
+@interface ViewController : UIViewController<UIScrollViewDelegate>
+{
+    
+}
+
+// 1 - UIScrollview Outletini olusturma
+@property(nonatomic,weak) IBOutlet UIScrollView *scroll;
+
+// 3 - yuksekligi gosterecek olan label ekleme
+@property(nonatomic,weak) IBOutlet UILabel *infoLabel;
+
+@property(nonatomic,weak) IBOutlet UILabel *speedLabel;
 
 @end
