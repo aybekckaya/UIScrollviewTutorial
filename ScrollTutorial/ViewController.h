@@ -23,7 +23,7 @@
 
 // 3 - yuksekligi gosterecek olan label ekleme
 @property(nonatomic,weak) IBOutlet UILabel *infoLabel;
-
 @property(nonatomic,weak) IBOutlet UILabel *speedLabel;
+@property(nonatomic,weak) IBOutlet UIView *infoView;
 
 @end
