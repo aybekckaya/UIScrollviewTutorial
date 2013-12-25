@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3AB4127186A2EB6001416E4 /* SpeedInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3AB4126186A2EB6001416E4 /* SpeedInfoView.xib */; };
+		A3AB412A186A2F33001416E4 /* SpeedInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AB4129186A2F33001416E4 /* SpeedInfoView.m */; };
 		A3AF41991869F7CA00CE1351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF41981869F7CA00CE1351 /* Foundation.framework */; };
 		A3AF419B1869F7CA00CE1351 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF419A1869F7CA00CE1351 /* CoreGraphics.framework */; };
 		A3AF419D1869F7CA00CE1351 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF419C1869F7CA00CE1351 /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3AB4126186A2EB6001416E4 /* SpeedInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeedInfoView.xib; sourceTree = "<group>"; };
+		A3AB4128186A2F33001416E4 /* SpeedInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedInfoView.h; sourceTree = "<group>"; };
+		A3AB4129186A2F33001416E4 /* SpeedInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedInfoView.m; sourceTree = "<group>"; };
 		A3AF41951869F7CA00CE1351 /* ScrollTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3AF41981869F7CA00CE1351 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3AF419A1869F7CA00CE1351 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +89,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3AB4125186A2D89001416E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3AB4126186A2EB6001416E4 /* SpeedInfoView.xib */,
+				A3AB4128186A2F33001416E4 /* SpeedInfoView.h */,
+				A3AB4129186A2F33001416E4 /* SpeedInfoView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		A3AF418C1869F7CA00CE1351 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +133,7 @@
 		A3AF419E1869F7CA00CE1351 /* ScrollTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				A3AB4125186A2D89001416E4 /* Views */,
 				A3AF41A71869F7CA00CE1351 /* AppDelegate.h */,
 				A3AF41A81869F7CA00CE1351 /* AppDelegate.m */,
 				A3AF41AA1869F7CA00CE1351 /* Main_iPhone.storyboard */,
@@ -238,6 +254,7 @@
 				A3AF41AF1869F7CA00CE1351 /* Main_iPad.storyboard in Resources */,
 				A3AF41B41869F7CA00CE1351 /* Images.xcassets in Resources */,
 				A3AF41AC1869F7CA00CE1351 /* Main_iPhone.storyboard in Resources */,
+				A3AB4127186A2EB6001416E4 /* SpeedInfoView.xib in Resources */,
 				A3AF41A31869F7CA00CE1351 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +276,7 @@
 			files = (
 				A3AF41B21869F7CA00CE1351 /* ViewController.m in Sources */,
 				A3AF41A91869F7CA00CE1351 /* AppDelegate.m in Sources */,
+				A3AB412A186A2F33001416E4 /* SpeedInfoView.m in Sources */,
 				A3AF41A51869F7CA00CE1351 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +496,7 @@
 				A3AF41CC1869F7CA00CE1351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A3AF41CD1869F7CA00CE1351 /* Build configuration list for PBXNativeTarget "ScrollTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +505,7 @@
 				A3AF41CF1869F7CA00CE1351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

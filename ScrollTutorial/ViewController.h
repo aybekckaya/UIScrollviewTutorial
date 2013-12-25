@@ -12,11 +12,13 @@
 
 #import <UIKit/UIKit.h>
 #import  <QuartzCore/QuartzCore.h>
+#import  "SpeedInfoView.h"
 
 //2 - scrollviewdelegate protokolunu ekleme
 @interface ViewController : UIViewController<UIScrollViewDelegate>
 {
-    
+    SpeedInfoView *speedInfoView;
+    int maximumSpeed;
 }
 
 // 1 - UIScrollview Outletini olusturma

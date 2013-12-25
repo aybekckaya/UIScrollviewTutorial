@@ -16,6 +16,8 @@
 
 @interface ViewController ()
 
+
+
 @end
 
 @implementation ViewController
@@ -28,6 +30,16 @@
     
     self.infoView.alpha=1;
     self.scroll.pagingEnabled=NO; // scrollview Paging
+    
+    // Add speed info View
+    NSArray* views = [[NSBundle mainBundle] loadNibNamed:@"SpeedInfoView" owner:nil options:nil];
+    speedInfoView=(SpeedInfoView *)views[0];
+    speedInfoView.center=CGPointMake(self.view.center.x, -1*speedInfoView.frame.size.height);
+    speedInfoView.superViewInstance=self.view;
+    [self.view addSubview:speedInfoView];
+    
+    maximumSpeed=0; // initialize maximum speed
+    
     [self setUpScrollView];
     
 }
@@ -87,7 +99,23 @@
 #pragma mark ScrollView Delegates
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    //NSLog(@"velocity: %f",velocity.y);
+    NSLog(@"function called: %s",__PRETTY_FUNCTION__);
+   
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+   NSLog(@"function called: %s",__PRETTY_FUNCTION__);
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"function called: %s",__PRETTY_FUNCTION__);
+    
+    speedInfoView.maxSpeed=maximumSpeed;
+    [speedInfoView show];
+    maximumSpeed=0; // reset maxSpeed
+
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -116,6 +144,12 @@
     CFTimeInterval timeElapsed=CACurrentMediaTime()-timeStart;
     int speed=diff/timeElapsed ;
     speed=speed/1000;
+    
+    // determine maxSpeed
+    if(speed > maximumSpeed)
+    {
+        maximumSpeed=speed;
+    }
         dispatch_async(dispatch_get_main_queue(), ^{
             //main thread
               self.speedLabel.text=[NSString stringWithFormat:@"%d",speed];
