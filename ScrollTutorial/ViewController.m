@@ -120,7 +120,9 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-   // [self show];
+    // current scroll offset y
+    self.infoLabel.text= [NSString stringWithFormat:@"%f",scrollView.contentOffset.y];
+    
     // calculate in background thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
           [self calculateVelocity];

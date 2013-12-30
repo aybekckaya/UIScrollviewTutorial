@@ -26,6 +26,9 @@
             </subviews>
             <color key="backgroundColor" red="0.91497927300000004" green="0.86066850620000002" blue="0.65691629380000005" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="speedInfoLabel" destination="3IL-ue-BsM" id="Rvg-Sy-3ow"/>
+            </connections>
         </view>
     </objects>
 </document>
